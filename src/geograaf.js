@@ -43,7 +43,7 @@ class Geograaf {
         let soundAlike = this.locality['soundAlike']
         
         status['locality'] = `I'm thinking of a ${localityType.toLowerCase()} in ${province}.`
-        status['soundAlike'] = `Its name sounds kinda like '${soundAlike}'. Or maybe it's just me...`
+        status['soundAlike'] = `Here is a hint: its name is somewhat similar to '${soundAlike}'.`
 
         return status
     }
