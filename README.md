@@ -10,8 +10,10 @@ The city to guess is shown on the screen as a row of dashes, representing each l
 
 ## API:
 
-Canadian Geographical Names Data Base (CGNDB) will be used to generate puzzles for Canada.
+Canadian Geographical Names Data Base (CGNDB) is used to generate puzzles for Canada.
 https://www.nrcan.gc.ca/earth-sciences/geography/application-programming-interface-api/9249
+
+Datamuse API is used to find words that sound like ones that the player is supposed to guess, in order to make the game more playable.
 
 
 
