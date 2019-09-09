@@ -1,0 +1,20 @@
+{
+  "name": "Geograaf",
+  "version": "1.0.0",
+  "description": "Geograaf project",
+  "main": "input.js",
+  "scripts": {
+    "dev-server": "webpack-dev-server --live-reload --mode development --hot",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
