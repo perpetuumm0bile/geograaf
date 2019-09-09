@@ -19,7 +19,7 @@ const getRandLocality = async () => {
         //finding a word that sounds like the locality name and adding it to the locality object properties.
         //Providing the player with sound-alike makes the game more playable - names are hard to guess otherwise.
         
-        let soundAlike = await fetch(`https://api.datamuse.com/words?sl=${localityName}.json`)
+        let soundAlike = await fetch(`https://api.datamuse.com/words?sl=${localityName}.json`, {mode: 'cors'})
         
         if (soundAlike.status === 200){
             soundAlike = await soundAlike.json()
