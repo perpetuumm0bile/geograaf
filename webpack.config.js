@@ -4,7 +4,6 @@ module.exports = {
     entry: ['babel-polyfill', path.resolve(__dirname,'src/index.js')],
     output: {
         path: path.resolve(__dirname, 'public/scripts/'),
-        // path: '/home/sm/Documents/JS_project/geograaf/public/scripts',
         filename: 'bundle.js'
     },
 
@@ -23,7 +22,6 @@ module.exports = {
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'public'),
-        // contentBase: '/home/sm/Documents/JS_project/geograaf/public',
         publicPath: '/scipts/'
 
     },
