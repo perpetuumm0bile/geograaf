@@ -21,17 +21,17 @@ const renderGame = function(initial = false){
     }
     
     if (game.gameState ==='playing'){
-        statusEl.textContent = game.status['locality']
-        soundAlikeEl.textContent = game.status['soundAlike']
+        statusEl.innerHTML = game.status['locality']
+        soundAlikeEl.innerHTML = game.status['soundAlike']
         puzzleEl.textContent = `${game.puzzle}`
         attemptsEl.textContent = `${game.guessRemain} attempts left`
     
     } else {
 
         if (game.gameState === 'failed') {
-            statusEl.textContent = "Argh! You're out of luck!"
+            statusEl.innerHTML = "<span class='alert'>Argh!</span> You're out of luck!"
         } else {
-            statusEl.textContent = "This is amazing! You've done it! Wanna play again?"
+            statusEl.innerHTML = "This is <span class='congrat'>amazing!</span> You've done it! Wanna play again?"
         }
 
         puzzleEl.textContent = game.word.join('')

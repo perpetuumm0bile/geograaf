@@ -2,24 +2,55 @@
 <html lang="en"></html>
 <html>
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Geograaf - guess the city!</title>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Hangman game which focuses on Canadian cities and towns">
+        <meta name="keywords" content="hangmman game, canadian cities, canadian towns">
+
+        <link rel="stylesheet" href="css/style.css">
+        
+        <title>Geograaf - guess the city!</title>
+
+        <meta charset="UTF-8">    
     </head>
+
+    
+        
     <body>
-        <h1 id='status'></h1>
-        <h2 id='soundAlike'></h2>
-        <p id='puzzle'></p>
-        <p id='attempts'></p>
-        <div id='alphaboard'></p>
 
+        <div class="bgimg-1"></div>
 
-        <script src='scripts/bundle.js'></script>
+        <div class="container">
+
+            <header>
+                <div id="logo">
+                    <h1>Geograaf<i class="fab fa-canadian-maple-leaf fa-sm" id='maple'></i></h1>
+                </div>
+            </header>
+    
+            <section id='game'>
+                <div id='status'></div>
+                <div id='soundAlike'></div>
+                <div id='puzzle'></div>
+                <div id='attempts'></div>
+                <div id='alphaboard'></div>
+            </section>
+    
+            <footer>
+                <p>Sergey Musaev, 2019</p>
+            </footer>
+    
+    
+            
+        
+        </div>
         
         
         
+        <script defer src='scripts/bundle.js'></script>
+        <script defer src="https://kit.fontawesome.com/157de5a7be.js"></script>
 
     </body>
+    
 </html>

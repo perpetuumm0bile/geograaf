@@ -10,7 +10,8 @@ const getRandLocality = async () => {
     
     if (answer.status === 200) {    
         const answerJSON = await answer.json()
-        const localitiesArray = answerJSON['items']
+        let localitiesArray = answerJSON['items']
+        localitiesArray = localitiesArray.filter((e) => !e['name'].includes('-') & !e['name'].includes(' ')) //filtering names with dashes and spaces
         const randNum = getRandomInt(0,localitiesArray.length)
         let randomLocality = localitiesArray[randNum]
         randomLocality['province'] = randProvince['description'] //converting province code to province name to give a hint to the player
@@ -20,6 +21,7 @@ const getRandLocality = async () => {
         //Providing the player with sound-alike makes the game more playable - names are hard to guess otherwise.
         
         let soundAlike = await fetch(`https://api.datamuse.com/words?sl=${localityName}.json`, {mode: 'cors'})
+        // let soundAlike = await fetch(`https://api.datamuse.com/words?sl=${localityName}.json`, {mode: 'no-cors'})
         
         if (soundAlike.status === 200){
             soundAlike = await soundAlike.json()

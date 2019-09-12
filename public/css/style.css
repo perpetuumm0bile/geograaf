@@ -1,0 +1,146 @@
+
+:root {
+  --feature-color:  rgb(221, 78, 78);
+  --hint-color: rgb(55, 194, 236);
+  --transparent-gray: rgba(149, 144, 141, 0.392);
+  --less-transparent-gray: rgba(149, 144, 141, 0.592);
+  --main-color: rgb(106, 204, 106);
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+  overflow: hidden;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.bgimg-1 {
+  position: relative;
+  opacity: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px);
+  transform: scale(1.2);
+  background-image: url("../img/map_bg_lr_2.jpg");
+  height: 100%;
+  width: 100%;
+
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction:column;
+  background-color: rgba(89, 95, 91, 0.463); /* Black w/opacity/see-through */
+  color: white;
+  z-index: 2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+
+}
+
+header{
+  display: flex;
+  height: 4rem;
+  background-color: var(--transparent-gray); /* lignt-gray w/opacity/see-through */
+  align-items: center;
+
+
+}
+
+#logo h1{
+  margin-left: 0.5rem;
+  font-size: 1.7rem;
+  color: rgb(106, 204, 106);
+
+
+
+}
+
+#maple{
+  color: var(--feature-color);
+  margin-left: 0.3rem;
+
+}
+
+#game{
+  padding: 5% 5%;
+}
+
+#status{
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+#soundAlike{
+  font-size: 1.2rem;
+}
+
+.hint{
+  color: var(--hint-color);
+}
+
+#puzzle{
+  margin: 1.5rem auto 0.5rem auto;
+  background-color: var(--less-transparent-gray);
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  letter-spacing: 1rem
+
+}
+
+.alert{
+  color: var(--feature-color);
+}
+
+.congrat{
+  color: var(--main-color);
+}
+
+#attempts{
+  margin-bottom: 1rem;
+  font-size:1rem;
+}
+
+#alphaboard{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  
+}
+
+button{
+  color: white;
+  display: flex;
+  font-size: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  border-radius: 50%;
+  align-content: center;
+  justify-content: center;
+  background: var(--hint-color);
+}
+
+.correctLetter{
+  background: none;
+  background: var(--main-color);
+}
+
+.wrongLetter{
+  background: var(--feature-color);
+}

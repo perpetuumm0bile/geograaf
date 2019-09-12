@@ -23,7 +23,7 @@ class Geograaf {
                 puzzle += letter
             }
             else {
-                puzzle += '*'
+                puzzle += '_'
             }
         });
 
@@ -42,8 +42,8 @@ class Geograaf {
         let localityType = this.locality['concise']['code']
         let soundAlike = this.locality['soundAlike']
         
-        status['locality'] = `I'm thinking of a ${localityType.toLowerCase()} in ${province}.`
-        status['soundAlike'] = `Here is a hint: its name is somewhat similar to '${soundAlike}'.`
+        status['locality'] = `I'm thinking of a <span class='hint'>${localityType.toLowerCase()}</span> in <span class='hint'>${province}</span>`
+        status['soundAlike'] = `its name is somewhat similar to <span class='hint'>'${soundAlike}'</span>`
 
         return status
     }
@@ -67,7 +67,7 @@ class Geograaf {
     }
 
     updateStatus() {
-        let isNotRevealed = this.puzzle.includes('*')
+        let isNotRevealed = this.puzzle.includes('_')
         
         if (this.guessRemain <= 0 & isNotRevealed) {
             this.gameState = 'failed'
