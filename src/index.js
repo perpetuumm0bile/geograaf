@@ -10,6 +10,7 @@ const statusEl = document.querySelector('#status')
 const soundAlikeEl = document.querySelector('#soundAlike')
 const puzzleEl = document.querySelector('#puzzle')
 const attemptsEl = document.querySelector('#attempts')
+const gameSectionEl = document.querySelector('#game')
 
 //Function for setting up DOM elements according to the game state
 const renderGame = function(initial = false){
@@ -43,7 +44,7 @@ const renderGame = function(initial = false){
         const resetButton = document.createElement('button')
         resetButton.innerHTML = 'Play again'
         resetButton.id = 'resetButton'
-        document.body.appendChild(resetButton)
+        gameSectionEl.appendChild(resetButton)
         
         resetButton.addEventListener('click', function(){
             startGame()
