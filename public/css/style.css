@@ -1,12 +1,27 @@
 
 :root {
   --feature-color:  rgb(221, 78, 78);
+  --transparent-feature-color:  rgba(221, 78, 78, 0.5);
   --hint-color: rgb(55, 194, 236);
   --transparent-gray: rgba(149, 144, 141, 0.392);
   --less-transparent-gray: rgba(149, 144, 141, 0.592);
   --main-green: rgb(106, 204, 106);
   --main-color: rgb(106, 204, 106);
+  --transparent-main-color: rgba(106, 204, 106, 0.5)
 }
+
+button:focus, button:active {
+  -moz-outline: 0;
+  -ms-outline:0;
+  -o-outline: 0;
+  -webkit-outline: 0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+
 
 body, html {
   height: 100%;
@@ -51,14 +66,14 @@ body, html {
 
 header{
   display: flex;
-  height: 4rem;
+  height: calc(3vw + 3vh + .5vmin);
   background-color: var(--transparent-gray); /* lignt-gray w/opacity/see-through */
   align-items: center;
 }
 
 #logo h1{
   margin-left: 0.5rem;
-  font-size: 1.7rem;
+  font-size: calc(1vw + 1vh + .5vmin);
   color: rgb(106, 204, 106);
 }
 
@@ -68,16 +83,17 @@ header{
 }
 
 #game{
-  padding: 5% 5%;
+  padding: 1% 5%;
 }
 
 #status{
-  font-size: 1.7rem;
+  font-size: calc(1.2vw + 1.3vh + .5vmin);
   text-align: center;
+  line-height: calc(1vw + 3vh + .5vmin);
 }
 
 #soundAlike{
-  font-size: 1.2rem;
+  font-size: calc(1vw + 1vh + .5vmin);
 }
 
 .hint{
@@ -85,11 +101,11 @@ header{
 }
 
 #puzzle{
-  margin: 1.5rem auto 0.5rem auto;
+  margin: calc(0.1vw + 2vh + .5vmin);
   background-color: var(--less-transparent-gray);
   border-radius: 0.5rem;
-  font-size: 1.7rem;
-  letter-spacing: 1rem
+  font-size: calc(1vw + 1vh + .5vmin);
+  letter-spacing: calc(1vw + 1vh + .5vmin);
 
 }
 
@@ -102,40 +118,43 @@ header{
 }
 
 #attempts{
-  margin-bottom: 1rem;
-  font-size:1rem;
+  margin-bottom: calc(0.1vw + 2vh + .5vmin);
+  font-size: calc(0.7vw + 1vh + .5vmin);
 }
 
 #alphaboard{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: calc(0.1vw + 1.5vh + .1vmin);
   align-content: center;
   align-items: center;
   justify-items: center;
+
   
 }
 
 #alphaboard button{
   color: white;
   display: flex;
-  font-size: 1.5rem;
-  height: 2rem;
-  width: 2rem;
-  border: none;
+  font-size: calc(1vw + 1vh + .5vmin);
+  height: calc(1.5vw + 1.5vh + .5vmin);
+  width: calc(1.5vw + 1.5vh + .5vmin);
+  border: solid 1px;
   border-radius: 50%;
   align-content: center;
   justify-content: center;
-  background: var(--hint-color);
+  background: none;
+  outline: none;
+/*   background: var(--hint-color); */
 }
 
 #alphaboard .correctLetter{
-  background: none;
-  background: var(--main-color);
+  background: var(--transparent-main-color);
+  
 }
 
 #alphaboard .wrongLetter{
-  background: var(--feature-color);
+  background: var(--transparent-feature-color);
 }
 
 #resetButton{
@@ -143,25 +162,26 @@ header{
   margin-top: 40%;
   color: white;
   font-size: 1.7rem;
-  border: none;
+  border: solid 1px;
   border-radius: 0.7rem;
   align-content: center;
   justify-content: center;
-  background: var(--hint-color);
+  background: none;
 }
 
 footer{
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 4rem;
+  height: calc(2vw + 2vh + .5vmin);
   display: flex;
   justify-content: space-around;
   align-items: center;
   justify-items: center;
+  background-color: var(--transparent-main-color); 
 }
 
 #github, #lnkdn{
   color:white;
-  transform: scale(1.5)
+  font-size: calc(1.5vw + 1.5vh + .5vmin);
 }
