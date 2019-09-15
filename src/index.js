@@ -5,12 +5,12 @@ let game
 
 // Defining DOM elements
 const body = document.querySelector('body')
-const alphaboardEl = document.querySelector('#alphaboard')
-const statusEl = document.querySelector('#status')
-const soundAlikeEl = document.querySelector('#soundAlike')
-const puzzleEl = document.querySelector('#puzzle')
-const attemptsEl = document.querySelector('#attempts')
-const gameSectionEl = document.querySelector('#game')
+const alphaboardEl = document.querySelector('.game__alphaboard')
+const statusEl = document.querySelector('.game__status')
+const soundAlikeEl = document.querySelector('.game__soundAlike')
+const puzzleEl = document.querySelector('.game__puzzle')
+const attemptsEl = document.querySelector('.game__attempts')
+const gameSectionEl = document.querySelector('.game')
 
 //Function for setting up DOM elements according to the game state
 const renderGame = function(initial = false){
@@ -30,20 +30,19 @@ const renderGame = function(initial = false){
     } else {
 
         if (game.gameState === 'failed') {
-            statusEl.innerHTML = "<span class='alert'>Argh!</span> You're out of luck!"
+            statusEl.innerHTML = "<span class='game__status__fail'>Argh!</span> You're out of luck!"
         } else {
-            statusEl.innerHTML = "This is <span class='congrat'>amazing!</span> You've done it! Wanna play again?"
+            statusEl.innerHTML = "This is <span class='game__status__win'>amazing!</span> You've done it! Wanna play again?"
         }
 
         puzzleEl.textContent = game.word.join('')
         soundAlikeEl.textContent = ''
         attemptsEl.textContent = ''
-        alphaboardEl.innerHTML = ''
         
         //adding the reset button
         const resetButton = document.createElement('button')
         resetButton.innerHTML = 'Play again'
-        resetButton.id = 'resetButton'
+        resetButton.className = 'game__resetButton'
         gameSectionEl.appendChild(resetButton)
         
         resetButton.addEventListener('click', function(){
@@ -63,6 +62,7 @@ const initAlpaboard = () => {
     for(let letter = alphabetStart; letter<alphabetEnd; letter++){
         const letterButton = document.createElement('button')
         letterButton.id = String.fromCharCode(letter)
+        letterButton.className = 'game__alphaboard__button'
         letterButton.innerHTML = String.fromCharCode(letter)
         alphaboardEl.appendChild(letterButton)
     }
@@ -76,11 +76,11 @@ const updateAlphaboard = () => {
     
     if (game.wrongGuesses.includes(lastGuess)){
 
-        pushedButton.className = 'wrongLetter'
+        pushedButton.className = 'game__alphaboard__button game__alphaboard__button--wrongLetter'
     
     } else {
 
-        pushedButton.className = 'correctLetter'
+        pushedButton.className = 'game__alphaboard__button game__alphaboard__button--correctLetter'
     }
 
 }

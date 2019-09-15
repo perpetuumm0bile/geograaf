@@ -1,15 +1,23 @@
 
 :root {
-  --feature-color:  rgb(221, 78, 78);
-  --transparent-feature-color:  rgba(221, 78, 78, 0.5);
-  --hint-color: rgb(55, 194, 236);
-  --transparent-gray: rgba(149, 144, 141, 0.392);
-  --less-transparent-gray: rgba(149, 144, 141, 0.592);
-  --main-green: rgb(106, 204, 106);
-  --main-color: rgb(106, 204, 106);
-  --transparent-main-color: rgba(106, 204, 106, 0.5)
+  /*   Colors */
+    --feature-color:  rgb(221, 78, 78);
+    --transparent-feature-color:  rgba(221, 78, 78, 0.5);
+    --hint-color: rgb(55, 194, 236);
+    --transparent-gray: rgba(149, 144, 141, 0.392);
+    --transparent-black: rgba(89, 95, 91, 0.463);
+    --less-transparent-gray: rgba(149, 144, 141, 0.592);
+    --main-color: rgb(106, 204, 106);
+    --transparent-main-color: rgba(106, 204, 106, 0.5); 
+  /*   Fonts */
+    --auto-scaling-x0_1: calc(0.1*(1vw + 1vh + .5vmin));
+    --auto-scaling-x0_5: calc(0.5*(1vw + 1vh + .5vmin));
+    --auto-scaling-x1: calc(1*(1vw + 1vh + .5vmin));
+    --auto-scaling-x1_5: calc(1.5*(1vw + 1vh + .5vmin));
+    --auto-scaling-x2: calc(2*(1vw + 1vh + .5vmin));
+  
 }
-
+  
 button:focus, button:active {
   -moz-outline: 0;
   -ms-outline:0;
@@ -26,7 +34,7 @@ button::-moz-focus-inner {
 body, html {
   height: 100%;
   margin: 0;
-  font: 400 15px/1.8 "Lato", sans-serif;
+  font: 400 15px/1.8 "Roboto", sans-serif;
   color: #777;
   overflow: hidden;
 }
@@ -35,154 +43,137 @@ body, html {
   box-sizing: border-box;
 }
 
-.bgimg-1 {
-  position: relative;
-  opacity: 1;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.bgimg {
+  background: url(../img/map_bg_lr_2.jpg) center center/cover;
+  height:100%;
+  width:100%;
   filter: blur(2px);
   transform: scale(1.2);
-  background-image: url("../img/map_bg_lr_2.jpg");
-  height: 100%;
-  width: 100%;
+  z-index: -1;
 }
 
-
-
 .container {
-  display: flex;
-  flex-direction:column;
-  background-color: rgba(89, 95, 91, 0.463); /* Black w/opacity/see-through */
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--transparent-black);
   color: white;
-  z-index: 2;
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  text-align: center;
+  padding: 0 1rem;
 }
 
-header{
-  display: flex;
-  height: calc(2vw + 3vh + .5vmin);
-  background-color: var(--transparent-gray); /* lignt-gray w/opacity/see-through */
-  align-items: center;
+.main-header{
+  border-bottom: solid 3px var(--less-transparent-gray); 
 }
 
-#logo h1{
-  margin-left: 0.5rem;
-  font-size: calc(1vw + 1vh + .5vmin);
-  color: rgb(106, 204, 106);
+.main-header__logo{
+
 }
 
-#maple{
-  color: var(--feature-color);
+.main-header__logo__text{
+  font-size: var(--auto-scaling-x2);
+  color: var(--main-color);
+  margin:var(--auto-scaling-x0_1);
+}
+
+.main-header__logo__icon{
   margin-left: 0.3rem;
+  font-size: var(--auto-scaling-x2);
+  color:var(--feature-color);
 }
 
-#game{
-  padding: 1% 5%;
-}
-
-#status{
-  font-size: calc(1.2vw + 1.3vh + .5vmin);
+.game{
+  height:70vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
-  line-height: calc(1vw + 3vh + .5vmin);
-}
-
-#soundAlike{
-  font-size: calc(1vw + 1vh + .5vmin);
 }
 
 .hint{
   color: var(--hint-color);
 }
 
-#puzzle{
-  margin: calc(0.1vw + 2vh + .5vmin);
-  margin-top: calc(0.1vw + 1vh + .5vmin);
-  background-color: var(--less-transparent-gray);
-  border-radius: 0.5rem;
-  font-size: calc(1vw + 1vh + .5vmin);
-  letter-spacing: calc(1vw + 1vh + .5vmin);
-
+.game__status{
+  font-size: var(--auto-scaling-x2);
 }
 
-.alert{
+.game__status__fail{
   color: var(--feature-color);
 }
 
-.congrat{
-  color: var(--main-color);
+.game__soundAlike{
+  font-size: var(--auto-scaling-x1_5);
 }
 
-#attempts{
-  margin-bottom: calc(0.1vw + 2vh + .5vmin);
-  font-size: calc(0.7vw + 1vh + .5vmin);
+.game__puzzle{
+/*   margin: calc(0.1vw + 2vh + .5vmin); */
+  background-color: var(--less-transparent-gray);
+  border-radius: 0.5rem;
+  font-size: var(--auto-scaling-x2);
+  letter-spacing: var(--auto-scaling-x1);
 }
 
-#alphaboard{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: calc(0.1vw + 1.5vh + .1vmin);
-  align-content: center;
-  align-items: center;
-  justify-items: center;
-
-  
+.game__attempts{
+  font-size: var(--auto-scaling-x1);
 }
 
-#alphaboard button{
-  color: white;
-  display: flex;
-  font-size: calc(1vw + 1vh + .5vmin);
-  height: calc(1.5vw + 1.5vh + .5vmin);
-  width: calc(1.5vw + 1.5vh + .5vmin);
-  border: solid 1px;
-  border-radius: 50%;
-  align-content: center;
-  justify-content: center;
-  background: none;
-  outline: none;
-/*   background: var(--hint-color); */
+.game__alphaboard{
+  padding: var(--auto-scaling-x0_5);
 }
 
-#alphaboard .correctLetter{
-  background: var(--transparent-main-color);
-  
-}
-
-#alphaboard .wrongLetter{
-  background: var(--transparent-feature-color);
-}
-
-#resetButton{
-  padding: 2rem;
-  margin-top: 15vh;
-  color: white;
-  font-size: 1.7rem;
-  border: solid 1px;
-  border-radius: 0.7rem;
-  align-content: center;
-  justify-content: center;
-  background: none;
-}
-
-footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: calc(2vw + 2vh + .5vmin);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  justify-items: center;
-  background-color: var(--transparent-main-color); 
-}
-
-#github, #lnkdn{
+.game__alphaboard__button{
+  margin: var(--auto-scaling-x0_1);
+  background:none;
   color:white;
-  font-size: calc(1.5vw + 1.5vh + .5vmin);
+  border: solid 1px;
+  border-radius: 5px;
+  font-size: var(--auto-scaling-x2);
+  cursor:pointer;
+}
+
+.game__alphaboard__button:hover{
+  border-color: var(--hint-color);
+}
+
+.game__alphaboard__button--wrongLetter{
+  background-color: var(--transparent-feature-color);
+  
+}
+
+.game__alphaboard__button--correctLetter{
+  background-color: var(--transparent-main-color);
+}
+
+.game__resetButton{
+  background:none;
+  color:white;
+  border: solid 1px;
+  border-radius: 5px;
+  font-size: var(--auto-scaling-x2);
+  cursor:pointer;
+}
+
+.game__resetButton:hover{
+  border-color: var(--hint-color);
+}
+
+.main-footer{
+  border-top: solid 3px var(--less-transparent-gray); 
+  text-align: center;
+}
+
+.main-footer__github-link{
+  color: white;
+  font-size: var(--auto-scaling-x1);
+  padding: var(--auto-scaling-x1);
+}
+
+.main-footer__lnkdn-link{
+  color: white;
+  font-size: var(--auto-scaling-x1);
 }
