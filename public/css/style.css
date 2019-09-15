@@ -52,17 +52,26 @@ body, html {
   z-index: -1;
 }
 
-.container {
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
+.overlay{
   background-color: var(--transparent-black);
-  color: white;
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
+  display:flex;
+  justify-content: center;
+  
+}
+
+.container {
+  
+  max-width: 2500px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  height: 100%;
   padding: 0 1rem;
 }
 

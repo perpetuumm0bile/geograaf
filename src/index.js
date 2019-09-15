@@ -38,11 +38,12 @@ const renderGame = function(initial = false){
         puzzleEl.textContent = game.word.join('')
         soundAlikeEl.textContent = ''
         attemptsEl.textContent = ''
-        
+
         //adding the reset button
         const resetButton = document.createElement('button')
         resetButton.innerHTML = 'Play again'
         resetButton.className = 'game__resetButton'
+        alphaboardEl.innerHTML = ''
         gameSectionEl.appendChild(resetButton)
         
         resetButton.addEventListener('click', function(){
