@@ -43,6 +43,7 @@ const renderGame = function(initial = false){
         const resetButton = document.createElement('button')
         resetButton.innerHTML = 'Play again'
         resetButton.className = 'game__resetButton'
+        resetButton.autofocus = true
         alphaboardEl.innerHTML = ''
         gameSectionEl.appendChild(resetButton)
         
