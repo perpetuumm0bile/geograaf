@@ -1,5 +1,7 @@
 # Geograaf
 
+https://geograaf.netlify.com/
+
 This is a browser text game, similar to classic paper game "Hangman". As opposed to Hangman, Geograaf focuses solely on cities and towns within a randomly chosen country. First version will support only Canada as a country.
 
 ## Mechanics:
